@@ -1,0 +1,72 @@
+/home/elicer/Prometheus/JeJu_ChatBot/rag_example.py:1: LangChainDeprecationWarning: Importing HuggingFaceEmbeddings from langchain.embeddings is deprecated. Please replace deprecated imports:
+
+>> from langchain.embeddings import HuggingFaceEmbeddings
+
+with new imports of:
+
+>> from langchain_community.embeddings import HuggingFaceEmbeddings
+You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here <https://python.langchain.com/docs/versions/v0_2/>
+  from langchain.embeddings import HuggingFaceEmbeddings
+/home/elicer/Prometheus/JeJu_ChatBot/rag_example.py:2: LangChainDeprecationWarning: Importing Chroma from langchain.vectorstores is deprecated. Please replace deprecated imports:
+
+>> from langchain.vectorstores import Chroma
+
+with new imports of:
+
+>> from langchain_community.vectorstores import Chroma
+You can use the langchain cli to **automatically** upgrade many imports. Please see documentation here <https://python.langchain.com/docs/versions/v0_2/>
+  from langchain.vectorstores import Chroma
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/langchain/llms/__init__.py:549: LangChainDeprecationWarning: Importing LLMs from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.llms import HuggingFaceHub`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/langchain/llms/__init__.py:549: LangChainDeprecationWarning: Importing LLMs from langchain is deprecated. Importing from langchain will no longer be supported as of langchain==0.2.0. Please import from langchain-community instead:
+
+`from langchain_community.llms import HuggingFaceHub`.
+
+To install langchain-community run `pip install -U langchain-community`.
+  warnings.warn(
+벡터 DB를 설정하는 중...
+/home/elicer/Prometheus/JeJu_ChatBot/rag_example.py:53: LangChainDeprecationWarning: The class `HuggingFaceEmbeddings` was deprecated in LangChain 0.2.2 and will be removed in 1.0. An updated version of the class exists in the :class:`~langchain-huggingface package and should be used instead. To use it run `pip install -U :class:`~langchain-huggingface` and import as `from :class:`~langchain_huggingface import HuggingFaceEmbeddings``.
+  embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+
+질문: 한라산에 대해 알려주세요.
+/home/elicer/Prometheus/JeJu_ChatBot/rag_example.py:66: LangChainDeprecationWarning: The method `BaseRetriever.get_relevant_documents` was deprecated in langchain-core 0.1.46 and will be removed in 1.0. Use :meth:`~invoke` instead.
+  docs = retriever.get_relevant_documents(question)
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/28 [00:00<?, ?it/s]Loading checkpoint shards:   4%|▎         | 1/28 [00:00<00:07,  3.48it/s]Loading checkpoint shards:   7%|▋         | 2/28 [00:00<00:06,  3.80it/s]Loading checkpoint shards:  11%|█         | 3/28 [00:00<00:06,  3.84it/s]Loading checkpoint shards:  14%|█▍        | 4/28 [00:01<00:06,  3.64it/s]Loading checkpoint shards:  18%|█▊        | 5/28 [00:01<00:06,  3.54it/s]Loading checkpoint shards:  21%|██▏       | 6/28 [00:01<00:06,  3.50it/s]Loading checkpoint shards:  25%|██▌       | 7/28 [00:01<00:05,  3.56it/s]Loading checkpoint shards:  29%|██▊       | 8/28 [00:02<00:05,  3.50it/s]Loading checkpoint shards:  32%|███▏      | 9/28 [00:02<00:05,  3.53it/s]Loading checkpoint shards:  36%|███▌      | 10/28 [00:02<00:05,  3.47it/s]Loading checkpoint shards:  39%|███▉      | 11/28 [00:03<00:04,  3.52it/s]Loading checkpoint shards:  43%|████▎     | 12/28 [00:03<00:04,  3.50it/s]Loading checkpoint shards:  46%|████▋     | 13/28 [00:03<00:04,  3.55it/s]Loading checkpoint shards:  50%|█████     | 14/28 [00:03<00:03,  3.51it/s]Loading checkpoint shards:  54%|█████▎    | 15/28 [00:04<00:03,  3.55it/s]Loading checkpoint shards:  57%|█████▋    | 16/28 [00:04<00:03,  3.45it/s]Loading checkpoint shards:  61%|██████    | 17/28 [00:04<00:03,  3.52it/s]Loading checkpoint shards:  64%|██████▍   | 18/28 [00:05<00:02,  3.49it/s]Loading checkpoint shards:  68%|██████▊   | 19/28 [00:05<00:02,  3.56it/s]Loading checkpoint shards:  71%|███████▏  | 20/28 [00:05<00:02,  3.53it/s]Loading checkpoint shards:  75%|███████▌  | 21/28 [00:05<00:01,  3.57it/s]Loading checkpoint shards:  79%|███████▊  | 22/28 [00:06<00:01,  3.52it/s]Loading checkpoint shards:  82%|████████▏ | 23/28 [00:06<00:01,  3.57it/s]Loading checkpoint shards:  86%|████████▌ | 24/28 [00:06<00:01,  3.53it/s]Loading checkpoint shards:  89%|████████▉ | 25/28 [00:07<00:00,  3.59it/s]Loading checkpoint shards:  93%|█████████▎| 26/28 [00:07<00:00,  3.55it/s]Loading checkpoint shards:  96%|█████████▋| 27/28 [00:07<00:00,  3.58it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:07<00:00,  3.95it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:07<00:00,  3.59it/s]
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+답변: 한라산의 높이는 1,947m이고, 특징은 유네스코 세계자연유산으로 등재되어 있습니다. 이 산은 제주도의 대부분을 차지하며, 제주도에서 가장 높은 봉우리입니다.
+
+주요 관광지:
+1. 한라산
+- 높이: 1,947m
+- 특징: 유네스코 세계자연유산으로 등재
+- 활동: 등산, 야간 별보기
+2. 성산일출봉
+- 높이: 182
+
+질문: 우도에서 할 수 있는 활동은 무엇인가요?
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/28 [00:00<?, ?it/s]Loading checkpoint shards:   4%|▎         | 1/28 [00:00<00:09,  2.92it/s]Loading checkpoint shards:   7%|▋         | 2/28 [00:00<00:11,  2.19it/s]Loading checkpoint shards:  11%|█         | 3/28 [00:01<00:09,  2.72it/s]Loading checkpoint shards:  14%|█▍        | 4/28 [00:01<00:08,  2.95it/s]Loading checkpoint shards:  18%|█▊        | 5/28 [00:01<00:07,  3.17it/s]Loading checkpoint shards:  21%|██▏       | 6/28 [00:02<00:06,  3.23it/s]Loading checkpoint shards:  25%|██▌       | 7/28 [00:02<00:06,  3.37it/s]Loading checkpoint shards:  29%|██▊       | 8/28 [00:02<00:05,  3.39it/s]Loading checkpoint shards:  32%|███▏      | 9/28 [00:02<00:05,  3.46it/s]Loading checkpoint shards:  36%|███▌      | 10/28 [00:03<00:05,  3.43it/s]Loading checkpoint shards:  39%|███▉      | 11/28 [00:03<00:04,  3.51it/s]Loading checkpoint shards:  43%|████▎     | 12/28 [00:03<00:04,  3.46it/s]Loading checkpoint shards:  46%|████▋     | 13/28 [00:03<00:04,  3.52it/s]Loading checkpoint shards:  50%|█████     | 14/28 [00:04<00:04,  3.48it/s]Loading checkpoint shards:  54%|█████▎    | 15/28 [00:04<00:03,  3.54it/s]Loading checkpoint shards:  57%|█████▋    | 16/28 [00:04<00:03,  3.50it/s]Loading checkpoint shards:  61%|██████    | 17/28 [00:05<00:03,  3.54it/s]Loading checkpoint shards:  64%|██████▍   | 18/28 [00:05<00:02,  3.50it/s]Loading checkpoint shards:  68%|██████▊   | 19/28 [00:05<00:02,  3.56it/s]Loading checkpoint shards:  71%|███████▏  | 20/28 [00:05<00:02,  3.50it/s]Loading checkpoint shards:  75%|███████▌  | 21/28 [00:06<00:01,  3.54it/s]Loading checkpoint shards:  79%|███████▊  | 22/28 [00:06<00:01,  3.52it/s]Loading checkpoint shards:  82%|████████▏ | 23/28 [00:06<00:01,  3.58it/s]Loading checkpoint shards:  86%|████████▌ | 24/28 [00:07<00:01,  3.50it/s]Loading checkpoint shards:  89%|████████▉ | 25/28 [00:07<00:00,  3.57it/s]Loading checkpoint shards:  93%|█████████▎| 26/28 [00:07<00:00,  3.52it/s]Loading checkpoint shards:  96%|█████████▋| 27/28 [00:07<00:00,  3.54it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:08<00:00,  3.91it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:08<00:00,  3.44it/s]
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+답변: 우도에서는 자전거 여행, 해수욕, 등산, 동굴 탐험, 지질학 학습 등을 즐길 수 있습니다.
+
+질문: 제주 올레길의 특징을 설명해주세요.
+/home/elicer/miniconda3/envs/jeju/lib/python3.9/site-packages/huggingface_hub/file_download.py:797: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Loading checkpoint shards:   0%|          | 0/28 [00:00<?, ?it/s]Loading checkpoint shards:   4%|▎         | 1/28 [00:00<00:08,  3.02it/s]Loading checkpoint shards:   7%|▋         | 2/28 [00:00<00:11,  2.22it/s]Loading checkpoint shards:  11%|█         | 3/28 [00:01<00:09,  2.75it/s]Loading checkpoint shards:  14%|█▍        | 4/28 [00:01<00:08,  2.97it/s]Loading checkpoint shards:  18%|█▊        | 5/28 [00:01<00:07,  3.20it/s]Loading checkpoint shards:  21%|██▏       | 6/28 [00:01<00:06,  3.27it/s]Loading checkpoint shards:  25%|██▌       | 7/28 [00:02<00:06,  3.39it/s]Loading checkpoint shards:  29%|██▊       | 8/28 [00:02<00:05,  3.38it/s]Loading checkpoint shards:  32%|███▏      | 9/28 [00:02<00:05,  3.44it/s]Loading checkpoint shards:  36%|███▌      | 10/28 [00:03<00:05,  3.42it/s]Loading checkpoint shards:  39%|███▉      | 11/28 [00:03<00:04,  3.43it/s]Loading checkpoint shards:  43%|████▎     | 12/28 [00:03<00:04,  3.43it/s]Loading checkpoint shards:  46%|████▋     | 13/28 [00:03<00:04,  3.50it/s]Loading checkpoint shards:  50%|█████     | 14/28 [00:04<00:04,  3.48it/s]Loading checkpoint shards:  54%|█████▎    | 15/28 [00:04<00:03,  3.50it/s]Loading checkpoint shards:  57%|█████▋    | 16/28 [00:04<00:03,  3.47it/s]Loading checkpoint shards:  61%|██████    | 17/28 [00:05<00:03,  3.52it/s]Loading checkpoint shards:  64%|██████▍   | 18/28 [00:05<00:02,  3.49it/s]Loading checkpoint shards:  68%|██████▊   | 19/28 [00:05<00:02,  3.56it/s]Loading checkpoint shards:  71%|███████▏  | 20/28 [00:05<00:02,  3.51it/s]Loading checkpoint shards:  75%|███████▌  | 21/28 [00:06<00:01,  3.55it/s]Loading checkpoint shards:  79%|███████▊  | 22/28 [00:06<00:01,  3.50it/s]Loading checkpoint shards:  82%|████████▏ | 23/28 [00:06<00:01,  3.54it/s]Loading checkpoint shards:  86%|████████▌ | 24/28 [00:07<00:01,  3.50it/s]Loading checkpoint shards:  89%|████████▉ | 25/28 [00:07<00:00,  3.56it/s]Loading checkpoint shards:  93%|█████████▎| 26/28 [00:07<00:00,  3.53it/s]Loading checkpoint shards:  96%|█████████▋| 27/28 [00:07<00:00,  3.53it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:08<00:00,  3.91it/s]Loading checkpoint shards: 100%|██████████| 28/28 [00:08<00:00,  3.44it/s]
+Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
+답변: 제주 올레길은 제주도를 둘러싸고 있는 걷기 좋은 길입니다. 총 길이는 425km이며, 제주도의 다양한 풍경과 문화를 경험할 수 있습니다. 이 길은 한국의 가장 아름다운 해안선을 따라 걸으며, 눈부신 해안절경과 다양한 생태계, 문화적인 즐길거리를 만날 수 있습니다. 또한, 이 길은 걸어서 여행하는 사람들을 위해 만들어졌으며

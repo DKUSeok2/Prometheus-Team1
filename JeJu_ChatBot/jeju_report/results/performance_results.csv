@@ -1,0 +1,51 @@
+timestamp,framework,function,execution_time,memory_usage,cpu_usage,success,response,reference
+2025-03-20 09:31:50.296182,LangChain,simple_qa,1.2508492469787598,181.47265625,6.6,True,"Answer the following question directly and concisely:
+Question: What is the capital of France?
+Answer: I am going to answer this question by answering the question above.",
+2025-03-20 09:31:51.016933,LangGraph,simple_qa,0.7081887722015381,17.92578125,6.6,True,"Answer by:
+
+Question 1: What are the first 5 letters of the alphabet?
+Question 2: How many letters of English are in the alphabet (including the letters of French and Spanish)?
+Answer
+
+Answer 1: How do.",
+2025-03-20 09:31:52.055519,LangChain,simple_qa,1.0283210277557373,0.1328125,6.8,True,"Answer the following question directly and concisely:
+Question: What is 2+2?
+Answer: 2+2 is a number.",
+2025-03-20 09:31:52.755685,LangGraph,simple_qa,0.6901698112487793,0.0,6.3,True,It is two and two are equal.,
+2025-03-20 09:31:53.789877,LangChain,simple_qa,1.024245023727417,0.01953125,6.6,True,"Answer the following question directly and concisely:
+Question: Who wrote Romeo and Juliet?
+Answer:
+Question: What is the purpose of the verse?
+Answer:
+Question: What is the purpose of the verse?
+Answer:
+Question: What is the purpose of the verse?
+Answer:
+Question: Who wrote the Bible?
+Answer:
+Question: Who wrote the Bible?
+Answer:
+Question: Who wrote the Bible?
+Answer:.",
+2025-03-20 09:31:54.492364,LangGraph,simple_qa,0.6913018226623535,0.0,6.3,True,"Answer of the Author:
+
+Question No.",
+2025-03-20 09:31:55.525315,LangChain,simple_qa,1.0231659412384033,0.0390625,7.0,True,"Answer the following question directly and concisely:
+Question: What would be the environmental impact of replacing all cars with electric vehicles?
+Answer: The electric car is the most environmentally friendly vehicle in the world, as it is not a vehicle that is driven by fossil fuels, but rather driven by batteries that are charged through a power system.",
+2025-03-20 09:31:56.228788,LangGraph,simple_qa,0.6936049461364746,0.00390625,6.3,True,"There are two types of electric vehicles, both of which will have an environmental impact.",
+2025-03-20 09:31:57.273411,LangChain,simple_qa,1.0341792106628418,0.03125,7.2,True,"Answer the following question directly and concisely:
+Question: Compare and contrast the economic systems of capitalism and socialism.",
+2025-03-20 09:31:57.980641,LangGraph,simple_qa,0.696462869644165,0.0,7.5,True,"In this article, we will look at the two systems.",
+2025-03-20 09:31:58.998111,LangChain,simple_qa,1.0075292587280273,0.015625,6.3,True,"Answer the following question directly and concisely:
+Question: Explain the process of photosynthesis and its importance to life on Earth.",
+2025-03-20 09:31:59.699705,LangGraph,simple_qa,0.6910419464111328,0.0,6.8,True,The process of photoelectric conversion is an important part of the life on the planet.,
+2025-03-20 09:32:00.719799,LangChain,simple_qa,1.0100343227386475,0.01953125,6.4,True,"Answer the following question directly and concisely:
+Question: How does climate change affect global food security?
+Answer: The effects of climate change are largely a function of the greenhouse effect.",
+2025-03-20 09:32:01.414697,LangGraph,simple_qa,0.6847994327545166,0.00390625,6.6,True,"Global food security is determined by factors such as crop yields, water use, the availability of energy, and the availability and quality of food supply.",
+2025-03-20 09:32:01.965403,LangChain,simple_qa,0.5406990051269531,0.01953125,6.8,True,"Answer the following question directly and concisely:
+Question: What are the ethical implications of artificial intelligence?
+Answer: Artificial intelligence is a type of artificial intelligence that is capable of learning.",
+2025-03-20 09:32:02.660706,LangGraph,simple_qa,0.6851162910461426,0.0,6.4,True,Artificial intelligence is not ethical.,
