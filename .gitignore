@@ -1,12 +1,10 @@
-# Environment files
+# Environment and Config files
+config.py
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
-# Configuration files with sensitive data
-config.py
 
 # Python
 __pycache__/
@@ -21,6 +19,16 @@ __pycache__/
 venv/
 env/
 ENV/
+
+# ChromaDB and Vector Databases
+chroma_db/
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
 
 # IDE
 .vscode/
@@ -41,11 +49,24 @@ Thumbs.db
 *.log
 logs/
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
+# Model files and checkpoints
+models/
+checkpoints/
+*.pkl
+*.bin
+*.pt
+*.pth
+
+# Large data files
+*.zip
+*.tar.gz
+*.rar
+
+# API Debug files
+debug_*.json
+debug_*.txt
 
 # Temporary files
 *.tmp
 *.temp
+temp/

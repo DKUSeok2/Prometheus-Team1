@@ -1,38 +1,41 @@
-from pydantic_settings import BaseSettings
-from typing import Optional
-import os
+# API 키 및 모델 설정 파일
 
-class Settings(BaseSettings):
-    # Database
-    DATABASE_URL: str = "postgresql://your_username@localhost/jeju_chatbot"
-    
-    # JWT
-    SECRET_KEY: str = "your-secret-key-here-change-in-production"
-    ALGORITHM: str = "HS256" 
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30 * 24 * 60  # 30 days
-    
-    # CORS
-    ALLOWED_ORIGINS: list = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000", 
-        "http://localhost:8080",
-        "http://127.0.0.1:8080"
-    ]
-    
-    # Chatbot Integration
-    CHATBOT_SERVICE_URL: str = "http://localhost:8001"
-    
-    # API Settings
-    API_V1_STR: str = "/api/v1"
-    PROJECT_NAME: str = "Jeju Travel Chatbot API"
-    PROJECT_VERSION: str = "1.0.0"
-    
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
+# Upstage API 키 (임베딩용)
+UPSTAGE_API_KEY = "your_upstage_api_key_here"
 
-# Create global settings instance
-settings = Settings()
+# 모델 설정
+EMBEDDING_MODEL = "solar-embedding-1-large"  # Upstage 임베딩
+CHAT_MODEL = "meta-llama/Llama-3.2-1B-Instruct"  # Llama 3.2 1B 대화 모델 (1-2GB)
 
-# Database connection string for SQLAlchemy
-SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL 
+# ChromaDB 설정
+CHROMA_DB_PATH = "./chroma_db"
+COLLECTION_NAME = "visitjeju_travel"
+
+# 기타 설정
+DEFAULT_NUM_RESULTS = 5
+MAX_TOKENS = 1024
+
+# 한국관광공사 Tour API 키 (향후 사용)
+TOUR_API_KEY = "your_tour_api_key_here"
+
+# HuggingFace API 키 (Gemma 모델용)
+HUGGINGFACE_TOKEN = "your_huggingface_token_here"
+
+# OpenAI API 키 (백업용)
+OPENAI_API_KEY = "YOUR_OPENAI_API_KEY_HERE"
+
+# 제주도 지역 코드
+JEJU_AREA_CODE = "39"
+
+# API 키 발급 안내
+API_GUIDE = """
+🔑 API 키 발급 방법:
+
+1. 공공데이터포털 (https://data.go.kr) 회원가입
+2. "국문 관광정보 서비스" 검색
+3. "한국관광공사_국문 관광정보 서비스_GW" 활용신청
+4. 발급받은 API 키를 TOUR_API_KEY에 입력
+5. python tour_api_collector.py 실행
+
+💡 승인까지 보통 1-2시간 소요됩니다.
+""" 

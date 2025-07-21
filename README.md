@@ -1,23 +1,23 @@
-# 🏗️ ORDA Backend API
+# 🤖 ORDA AI Engine
 
-**제주도 여행 AI 챗봇 '오르다'의 백엔드 API 서버**
+**제주도 여행 AI 챗봇 '오르다'의 핵심 AI 엔진**
 
-> 이 브랜치는 [오르다 메인 프로젝트](https://github.com/DKUSeok2/Prometheus-Team1)의 백엔드 API 서버입니다.  
-> FastAPI 기반으로 사용자 인증, 채팅 세션 관리, 챗봇 서비스 연동을 제공합니다.
+> 이 브랜치는 [오르다 메인 프로젝트](https://github.com/DKUSeok2/Prometheus-Team1)의 AI 엔진 모음입니다.  
+> 다양한 LLM과 RAG 기술을 활용한 챗봇 구현체들과 데이터 처리 도구들을 포함합니다.
 
 ## 📋 목차
 - [🚀 빠른 시작](#-빠른-시작)
+- [🤖 챗봇 종류](#-챗봇-종류)
 - [🛠️ 기술 스택](#️-기술-스택)
 - [📁 프로젝트 구조](#-프로젝트-구조)
 - [🔧 설치 및 실행](#-설치-및-실행)
-- [🌐 API 엔드포인트](#-api-엔드포인트)
-- [💾 데이터베이스](#-데이터베이스)
+- [🔌 API 서비스](#-api-서비스)
 
 ## 🚀 빠른 시작
 
 ```bash
-# 1. 저장소 클론 (Backend 브랜치)
-git clone -b Backend https://github.com/DKUSeok2/Prometheus-Team1.git
+# 1. 저장소 클론 (AI 브랜치)
+git clone -b AI https://github.com/DKUSeok2/Prometheus-Team1.git
 cd Prometheus-Team1
 
 # 2. 의존성 설치
@@ -25,169 +25,236 @@ pip install -r requirements.txt
 
 # 3. 환경 설정
 cp config.example.py config.py
-# config.py에서 데이터베이스 정보 및 JWT 키 설정
+# config.py에서 API 키들 설정
 
-# 4. 데이터베이스 초기화 (필요 시)
-python reset_db.py
+# 4. 데이터 준비 (선택사항)
+python data_loader.py
 
-# 5. 서버 실행
-python main.py
+# 5. 챗봇 실행 (여러 옵션)
+python final_chatbot.py        # 최종 버전 (추천)
+python chatbot_service.py      # API 서비스
+python interactive_demo.py     # 대화형 데모
 ```
+
+## 🤖 챗봇 종류
+
+### 🎯 **최종 버전 (권장)**
+- **final_chatbot.py**: LangGraph 기반 Multi-agent 챗봇
+  - 컨텍스트 인식 대화
+  - 사용자 프로필 관리
+  - 조건부 프롬프트 (일정 생성 vs 일반 추천)
+
+- **interactive_demo.py**: 프롬프트 엔지니어링 데모
+  - 대화 테스트 환경
+  - 컨텍스트 연결 테스트 (`--test-context`)
+
+### 🔌 **API 서비스**
+- **chatbot_service.py**: FastAPI 기반 챗봇 서비스
+  - REST API 엔드포인트 제공
+  - 백엔드와 연동 가능
+
+### 🛠️ **데이터 도구**
+- **data_loader.py**: 제주도 여행 데이터 로딩 및 ChromaDB 초기화
 
 ## 🛠️ 기술 스택
 
-- **Framework**: FastAPI
-- **Database**: PostgreSQL + SQLAlchemy ORM
-- **Authentication**: JWT (JSON Web Tokens)
-- **Validation**: Pydantic
-- **Server**: Uvicorn ASGI
-- **HTTP Client**: HTTPX (챗봇 서비스 연동)
+### 🧠 **LLM & Embedding**
+- **Solar Pro** (Upstage): 대화 생성
+- **Solar Embedding** (Upstage): 벡터 임베딩  
+- **Llama 3.2 1B**: 경량 모델 옵션
+- **HuggingFace Transformers**: 다양한 모델 지원
+
+### 🔍 **RAG & Vector DB**
+- **ChromaDB**: 벡터 데이터베이스
+- **LangChain**: RAG 파이프라인
+- **Sentence Transformers**: 임베딩 처리
+
+### 🤖 **Agent Framework**
+- **LangGraph**: Multi-agent 오케스트레이션
+- **Multi-agent System**: 역할 기반 에이전트 분리
+
+### 🌐 **API & Service**
+- **FastAPI**: REST API 서비스
+- **HTTPX**: 비동기 HTTP 클라이언트
+- **Uvicorn**: ASGI 서버
 
 ## 📁 프로젝트 구조
 
 ```
-Backend/
-├── README.md               # 이 파일
-├── requirements.txt        # Python 의존성
-├── config.example.py       # 설정 파일 예시
-├── main.py                 # FastAPI 애플리케이션 진입점
-├── models.py               # SQLAlchemy 데이터베이스 모델
-├── schemas.py              # Pydantic 스키마 (입출력 검증)
-├── database.py             # 데이터베이스 연결 설정
-├── reset_db.py             # 데이터베이스 초기화 스크립트
-├── routers/               # API 라우터
-│   ├── auth.py            # 인증 관련 API
-│   └── chat.py            # 채팅 관련 API
-└── utils/                 # 유틸리티 모듈
-    └── auth.py            # JWT 토큰 처리
+AI/
+├── README.md                    # 프로젝트 가이드
+├── requirements.txt             # Python 의존성
+├── .gitignore                   # 보안 설정
+├── config.example.py            # 설정 파일 템플릿
+│
+├── 🎯 핵심 AI 파일들
+│   ├── final_chatbot.py         # 메인 챗봇 (LangGraph Multi-agent)
+│   ├── interactive_demo.py      # 프롬프트 엔지니어링 데모
+│   ├── chatbot_service.py       # FastAPI 서비스 (백엔드 연동)
+│   └── data_loader.py           # 데이터 로딩 유틸리티
+│
+└── data/                        # 제주도 여행 데이터
+    ├── visitjeju_event.json     # 행사 정보
+    ├── visitjeju_food.json      # 맛집 정보
+    ├── visitjeju_hotel.json     # 숙소 정보
+    └── visitjeju_tour.json      # 관광지 정보
 ```
 
 ## 🔧 설치 및 실행
 
 ### 1. 환경 준비
 - Python 3.8 이상
-- PostgreSQL 설치 및 실행
-- 데이터베이스 생성 (`jeju_chatbot`)
+- 필요한 API 키들 (Upstage, HuggingFace 등)
 
-### 2. 설정 파일 준비
-```bash
-cp config.example.py config.py
-```
-
-`config.py`에서 다음 항목을 수정하세요:
-- `DATABASE_URL`: PostgreSQL 연결 정보
-- `SECRET_KEY`: JWT 토큰 서명용 비밀키 (보안을 위해 복잡한 값으로 변경)
-
-### 3. 의존성 설치
+### 2. 의존성 설치
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. 데이터베이스 초기화
+### 3. 설정 파일 준비
 ```bash
-# 기존 테이블 삭제 후 재생성
-python reset_db.py
+cp config.example.py config.py
 ```
 
-### 5. 서버 실행
+`config.py`에서 다음 API 키들을 설정하세요:
+- `UPSTAGE_API_KEY`: [Upstage Console](https://console.upstage.ai/)에서 발급
+- `HUGGINGFACE_TOKEN`: [HuggingFace](https://huggingface.co/settings/tokens)에서 발급
+- `TOUR_API_KEY`: [공공데이터포털](https://data.go.kr/)에서 발급 (선택사항)
+
+### 4. 데이터 초기화 (선택사항)
 ```bash
-python main.py
+python data_loader.py
 ```
 
-서버가 `http://localhost:8000`에서 실행됩니다.
+### 5. 챗봇 실행
 
-## 🌐 API 엔드포인트
-
-### 📖 API 문서
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
-
-### 🔐 인증 API (`/api/v1/auth`)
-- `POST /register` - 사용자 회원가입
-- `POST /login` - 사용자 로그인 (JWT 토큰 발급)
-- `GET /me` - 현재 사용자 정보 조회
-
-### 💬 채팅 API (`/api/v1/chat`)
-- `POST /sessions` - 새 채팅 세션 생성
-- `GET /sessions` - 사용자의 채팅 세션 목록
-- `GET /sessions/{session_id}` - 특정 세션의 메시지 이력
-- `POST /sessions/{session_id}/messages` - 채팅 메시지 송수신
-- `PUT /sessions/{session_id}/title` - 세션 제목 변경
-- `DELETE /sessions/{session_id}` - 세션 삭제
-
-### 🤖 챗봇 연동
-백엔드 API는 별도의 챗봇 서비스(`http://localhost:8001`)와 연동하여 AI 응답을 생성합니다.
-
-## 💾 데이터베이스
-
-### 🗃️ 주요 테이블
-- **users**: 사용자 정보
-- **chat_sessions**: 채팅 세션 (사용자별 대화 방)
-- **chat_messages**: 채팅 메시지 (사용자/봇 메시지)
-
-### 🔄 데이터베이스 관리
+#### 🎯 최종 버전 (추천)
 ```bash
-# 테이블 재생성
-python reset_db.py
+# 메인 챗봇 실행
+python final_chatbot.py
 
-# 개발용 더미 데이터 생성 (필요 시)
-# python create_demo_data.py
+# 대화형 데모 (프롬프트 테스트용)
+python interactive_demo.py
+
+# 컨텍스트 테스트
+python interactive_demo.py --test-context
+```
+
+#### 🔌 API 서비스
+```bash
+# 챗봇 API 서비스 실행 (포트 8001)
+python chatbot_service.py
+```
+
+## 🔌 API 서비스
+
+### 챗봇 서비스 API
+`chatbot_service.py`를 실행하면 `http://localhost:8001`에서 다음 API를 제공합니다:
+
+```bash
+# 채팅 요청
+POST http://localhost:8001/chat
+{
+  "content": "제주도 맛집 추천해줘",
+  "session_id": "user123",
+  "conversation_history": [...],
+  "user_profile": {...}
+}
+
+# 헬스 체크
+GET http://localhost:8001/health
+```
+
+### 백엔드 연동
+이 API 서비스는 [Backend 브랜치](https://github.com/DKUSeok2/Prometheus-Team1/tree/Backend)의 FastAPI 서버와 연동됩니다:
+
+```
+Backend API ↔ Chatbot Service ↔ LLM/RAG
+    :8000         :8001          Models
 ```
 
 ## 🔗 메인 프로젝트 연관성
 
 ### 📂 전체 오르다 프로젝트 구조
 - **메인 브랜치**: Streamlit 기반 웹 애플리케이션
-- **Prompt 브랜치**: 프롬프트 엔지니어링 데모
-- **Backend 브랜치** (현재): FastAPI 백엔드 서버
+- **Prompt 브랜치**: 프롬프트 엔지니어링 데모  
+- **Backend 브랜치**: FastAPI 백엔드 서버
+- **AI 브랜치** (현재): 챗봇 AI 엔진 모음
 
-### 🔄 서비스 연동 구조
-```
-Flutter App ↔ Backend API ↔ Chatbot Service ↔ ChromaDB + LLM
-     ↓              ↓              ↓              ↓
-  사용자 UI     인증/세션관리    AI 응답생성     벡터검색+생성
-```
+### 🔄 개발 플로우
+1. **AI 브랜치**에서 챗봇 알고리즘 개발/실험
+2. **Prompt 브랜치**에서 프롬프트 최적화
+3. **Backend 브랜치**에서 API 서버 개발
+4. **메인 브랜치**에서 전체 앱 통합
+
+## 📊 핵심 파일 역할
+
+| 파일명 | 용도 | 실행 방법 | 특징 |
+|--------|------|-----------|------|
+| **final_chatbot.py** | 메인 챗봇 | `python final_chatbot.py` | 프로덕션용, 컨텍스트 인식 |
+| **interactive_demo.py** | 프롬프트 테스트 | `python interactive_demo.py` | 프롬프트 엔지니어링 환경 |
+| **chatbot_service.py** | API 서비스 | `python chatbot_service.py` | 백엔드 연동용 REST API |
+| **data_loader.py** | 데이터 초기화 | `python data_loader.py` | ChromaDB 벡터 데이터베이스 구축 |
 
 ## 🚨 주의사항
 
-### 보안 설정
-- **SECRET_KEY**: 운영환경에서는 반드시 강력한 비밀키로 변경
-- **DATABASE_URL**: 실제 데이터베이스 정보로 설정
-- **.env 파일**: 민감한 정보는 환경 변수로 관리 권장
+### API 사용량 관리
+- **Solar Pro API**: 유료 서비스, 사용량 모니터링 필요
+- **HuggingFace**: 무료 Tier 제한 확인
+- **공공데이터포털**: API 호출량 제한 확인
 
-### 개발/운영 환경
-- 개발: `http://localhost:8000`
-- CORS 설정에 프론트엔드 도메인 추가 필요
-- 운영환경에서는 HTTPS 사용 권장
+### 모델 다운로드
+- 일부 HuggingFace 모델들은 초기 실행 시 자동 다운로드
+- 충분한 디스크 공간 확보 (모델당 1-4GB)
 
 ## 🆘 문제 해결
 
 ### 자주 발생하는 오류
 
-#### 1. 데이터베이스 연결 오류
+#### 1. API 키 오류
 ```
-sqlalchemy.exc.OperationalError: could not connect to server
+AuthenticationError: Invalid API key
 ```
-**해결책**: PostgreSQL 서비스 실행 및 데이터베이스 생성 확인
+**해결책**: config.py에서 올바른 API 키 설정 확인
 
-#### 2. JWT 토큰 오류
+#### 2. ChromaDB 초기화 오류  
 ```
-401 Unauthorized: Could not validate credentials
+chromadb.errors.InvalidDimensionException
 ```
-**해결책**: 클라이언트에서 `Authorization: Bearer <token>` 헤더 포함
+**해결책**: `python data_loader.py` 재실행
 
-#### 3. 챗봇 서비스 연결 실패
+#### 3. 메모리 부족
 ```
-챗봇 서비스 연결 실패: Connection refused
+CUDA out of memory / RAM shortage
 ```
-**해결책**: 챗봇 서비스(`http://localhost:8001`) 실행 상태 확인
+**해결책**: 더 작은 모델 사용 (Llama-3.2-1B 등)
+
+#### 4. 모델 다운로드 실패
+```
+ConnectionError: Unable to download model
+```
+**해결책**: 네트워크 연결 확인, HuggingFace 토큰 설정
 
 ## 📞 지원
 
 - **기술적 문제**: [GitHub Issues](https://github.com/DKUSeok2/Prometheus-Team1/issues)
 - **메인 프로젝트**: [Prometheus Team1 Repository](https://github.com/DKUSeok2/Prometheus-Team1)
-- **API 문서**: http://localhost:8000/docs
+- **AI 모델 문의**: Upstage Console, HuggingFace Community
+
+## 🤝 기여 방법
+
+### 프롬프트 개선
+1. `interactive_demo.py`로 테스트
+2. 개선된 프롬프트를 `final_chatbot.py`에 적용
+3. 성능 평가 결과 공유
+
+### 챗봇 기능 개선
+1. `final_chatbot.py`에서 새로운 기능 추가
+2. `chatbot_service.py`의 API도 함께 업데이트
+3. 테스트 후 Pull Request 생성
 
 ---
 
-**🏗️ 안정적이고 확장 가능한 백엔드로 오르다를 지원합니다!** 
+**🤖 다양한 AI 기술로 더 똑똑한 제주도 여행 챗봇을 만들어나갑니다!**
+
+**지속적인 실험과 개선을 통해 최고의 여행 AI 어시스턴트 '오르다'를 완성해요! 🌴✨** 
