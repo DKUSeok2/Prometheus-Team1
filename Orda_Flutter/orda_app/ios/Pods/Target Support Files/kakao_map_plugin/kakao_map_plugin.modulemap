@@ -1,0 +1,6 @@
+framework module kakao_map_plugin {
+  umbrella header "kakao_map_plugin-umbrella.h"
+
+  export *
+  module * { export * }
+}
